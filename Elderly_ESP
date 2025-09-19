@@ -1,0 +1,30 @@
+	Use  ESP32 + module
+	BOM:
+	MCU: ESP32-C3-MINI-1U
+	Cellular + GNSS: SIM7080G
+	HR/SpO₂ front-end: Cheap: MAX30102 (Maxim/AD)… PRO: MAX86176 + OSRAM SFH7072 LED
+	Temperature: Cheap TMP117 (TI)… PRO: MAX30205 (on-skin) 
+	IMU: Cheap LIS2DW12 (ST.. PRO: LSM6DSOX
+	Charger: Cheap BQ24074 (TI)
+	Cheap Buck: TPS62740 (TI) … PRO: BucknBoost: BQ24076 + TPS63810 buck-boost
+	LTE antenna
+	GNSS antenna
+	Esim: ST4SIM-200M (ST)
+	Haptics: 10 mm coin motor + side tactile switch + RGB LED
+	Passives: 0402 passives, 2× u.FL, pogo/prog pads
+	Lipo: flat cell 350–500 mAh
+	
+	100+ Unit: Cheap: 26.8 US dollar … PRO: 35 Dollar
+	
+	
+	Interface. Maxim, tmp, imu I2C. Int for each system
+	Interface sim7080G UART. Additional Io lines for reset ans stuff
+	Esp32 already has antenna for ble and wifi 2.4Ghz
+	Sim7080g need 2 separate antennas for LTE 700 - 2100Mhz, Gnss 1570MHZ
+	 
+	ESP32_C3_MINI_1. 
+		GPIO 2 8 9 control boot mode
+			Spi boot mode (run loaded program)  1 x(not matter) 1
+			Joint download (usb or  uart)  1 1 0
+
+		DOES NOT SEEM TO SUPPORT VOICE CALLING. SINCE MOST CARRIER DO NOT HAVE VoLTE
