@@ -1,0 +1,57 @@
+Physical Limit on Joint to avoid wire wrapping.
+	No slip ring: added cost, weight, footprint, noise
+	Need program joint limit
+		Carved joint angle after power cycle
+	Wiring
+		Even without concentric. 
+		Service loop with tape between upper and lower link
+		Wire outside for now
+			Later do through hole
+				Need arc holes through ends of links
+Vesc placement: 
+	Create coupler on links to screw Vesc to.
+		3 sided
+		Through holes on links
+		Coupler just before motor to keep phase lead short
+Foot wheel coupler
+	Wheel outside of link
+	Coupler offset from link, instead of inline like with gim6010
+	Use M4 screw holes for mount
+	Create encoder mount inside coupler M2.5 Screws
+	Wheel hub attached by M3 screws
+	Wheel hub, surround motor rotor
+	Wheel hub OD tailored to tires
+	Buy big tires
+Can
+	Xiaomi
+		Program issue stop if watchdog timeout
+		Test
+			Read IMU pitch/roll PID to keep chassis even
+				Generate ang_sp, speed_sp for PD controller
+					Speed_sp 0
+					Angle sp porportional to pitch changes
+						Chassis 10deg -> 10deg to motor
+	VESC
+		Did not work first time cause the CAN on VESC was 500k bps.
+			CaN ID was 104, not 255 as in program
+			Gain kp too small
+		Gain above kp 0.005 and kd above 0.0001 cause grinding (very bad)
+			So use gain smaller than 0.005 and kd smaller than 0.0001 instaead
+			Decide to use kp 0.005 and kd 0.00015 at the end
+				Kp high to react tp small changes in imu angle
+				Kd higher than 1 to damp jerkiness but not higher because it would cause grinding.
+				
+
+For knee joint
+	Control goal
+		Maintain traight line from chassi to calf end. 
+Straight line with regard to chassis pitch 0
+
+Issue with Glitchy CAN VESC
+  Not from BNO055
+    Verified with servo (input bno pitch -> smooth angle)
+  Issue from CAN
+    Reflection
+      Todo: solve with adding 120 Resistor
+    Communication Conflict Crosstalk
+      Todo: Turn off all other communication.
