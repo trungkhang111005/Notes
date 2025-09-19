@@ -1,0 +1,29 @@
+Snubber Circuit Using resistor and relay, or Mosfet for low power
+Drones
+	FC 
+		Can be built with STM32 (open source fw)
+		IMU
+		GPS: has to buy a module (calculate position by using relative distance to satellite)
+		Headers to communicate with ESC
+	ESC
+		MCU: stm32 also open source fw
+		FOC or 6-trapezoidal
+		DRV brushless driver
+			External FETs
+General
+	IMUs: BMI088 or ICM-42688-P: no on board fusion but high rate, low drift, do filter on MCU
+		Both ICs are less than $10
+		Madgwick filter: 1 dimensional, gradient adjustment
+		Mahony: PI complimentary (3 dimensional)
+	FOC needs shunt resistor (current control)
+		2-shunt. 3-shunt (2 phase sense vs 3 phase sense)
+		DRV brushless driver DRV83xx (DRV8323)
+		Link capacitor (between supply and before switching)
+		Add DOB (disturbance observer for robustness)
+			Need model of Motor joints (inertia)
+		(FOC uses Clark-Park to transform 3-phase current to q and d vectors. 
+			q is torque producing
+	6 trapezoidal (votage control)
+		Need voltage sense
+Odrive:
+	Needs Altium/software to convert to gerber
