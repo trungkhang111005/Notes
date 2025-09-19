@@ -1,0 +1,21 @@
+MCU
+	Ardupilot fw
+	Use H7 for best performance, future proof 
+	F7 is fine
+	F4 need feature cuts
+Custom files
+	Hwdef.dat
+		Defines pins peripherals
+	Hwdef-bl.dat
+		Defines bootloader memory
+	defaults.parm
+		Default Parameters
+	Board ID (APJ_BOARD_ID)
+		Open PR adding board name with unique ID to Tools/AP_Bootloader/board_types.txt
+	GPS
+		Matek M9N-5883
+
+ESC
+	DroneCAN for communication with FC
+	Am32 fw
+STM32G0
