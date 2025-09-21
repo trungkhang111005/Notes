@@ -55,3 +55,14 @@ Issue with Glitchy CAN VESC
       Todo: solve with adding 120 Resistor
     Communication Conflict Crosstalk
       Todo: Turn off all other communication.
+	Solved
+		added 120 termination resistor
+		check dmm reveal bad connection of vesc positive stub
+			resolder with jst connector
+			new stubs with all jst, no hard wire solder
+			everything works
+				needs further testing with feedback from both vesc and xiaomi for crosstalk resolution
+Issue trig angle
+	atan2 from la and lb does not resolve into quadrant b/c la and lb always >0
+		notes: la horizontal, lb vertical
+	
