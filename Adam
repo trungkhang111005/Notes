@@ -65,4 +65,4 @@ Issue with Glitchy CAN VESC
 Issue trig angle
 	atan2 from la and lb does not resolve into quadrant b/c la and lb always >0
 		notes: la horizontal, lb vertical
-	
+	ack: vesc angle is porpotional to xiami angle plus the compensation for short leg link
