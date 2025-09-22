@@ -37,7 +37,8 @@ SEQ:
 	MCU communicate with MAX and IMU through I2C
 	Notes: INT signal from IMU, MAX -> MCU
 		Antenna
-			Use 2 Antenna for Cellular and GNSS
+			Use 2 Antenna for Cellular and GNSS	
 			Or 1 for both Cellular and GNSS
 				Select by Ant_control pins
-				
+			2 Separate Antennas requires less tuning design effort
+			
