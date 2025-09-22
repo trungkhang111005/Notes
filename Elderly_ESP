@@ -28,3 +28,16 @@
 			Joint download (usb or  uart)  1 1 0
 
 		DOES NOT SEEM TO SUPPORT VOICE CALLING. SINCE MOST CARRIER DO NOT HAVE VoLTE
+SEQ:
+	MCU turn on by battery
+	Strapping pin and push buttons for boot modes
+	MCU turn on SIM7080G by PWRKEY -> turn on Shifter
+	MCU turn on 1v8 LDO -> turn on MAX and IMU
+	MCU communicate with SIM7080 through UART and SHifter
+	MCU communicate with MAX and IMU through I2C
+	Notes: INT signal from IMU, MAX -> MCU
+		Antenna
+			Use 2 Antenna for Cellular and GNSS
+			Or 1 for both Cellular and GNSS
+				Select by Ant_control pins
+				
