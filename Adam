@@ -66,3 +66,10 @@ Issue trig angle
 	atan2 from la and lb does not resolve into quadrant b/c la and lb always >0
 		notes: la horizontal, lb vertical
 	ack: vesc angle is porpotional to xiami angle plus the compensation for short leg link
+		Solved: Actually it does resolve into Quadrant, as la obtained from cos(fb_rad) can be negative
+			This negative la however is hard to make sense. So I normalize it posive by always checking for negative then times -1 if needed.
+				Fixed: knee joint does respond to changes in hip joint, but only when hip joint is positive
+					Fixed: when hip joint is negative, take 360 - (theta + fb).
+
+Issue: Cannot read Can fb frame from VESC
+	Fixed: status message ID is shifted 1 decimal up. Status 4 is 17 instead of 16 as documented by VESC.
