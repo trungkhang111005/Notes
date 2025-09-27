@@ -75,3 +75,11 @@ Issue: Cannot read Can fb frame from VESC
 	Fixed: status message ID is shifted 1 decimal up. Status 4 is 17 instead of 16 as documented by VESC.
 
 Changes: take initial angle with knee straighten as 0, then add it as offset when control.
+
+Vesc with 8318 Motor
+	pole numbers in setup step matters
+		motor can become glitchy if wrong pole numbers
+	Pos PID
+		Kp 0.0062
+		Kd 0.0001 - 0.0004
+
